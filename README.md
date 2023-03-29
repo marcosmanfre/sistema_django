@@ -1,2 +1,2 @@
-# cadastro_de_alunos
+# sistema_django
  Sistema em Django
