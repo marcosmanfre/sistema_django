@@ -20,5 +20,5 @@ from home import views
 urlpatterns = [
     path('', views.home),
     path('admin/', admin.site.urls),
-    path('sigup', views.sigup),
+    path('sigup/', views.sigup),
 ]
