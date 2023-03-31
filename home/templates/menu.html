@@ -23,27 +23,37 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="/sigup">Cadastrar</a>
-                </li>
+                {% if user.is_authenticated %}
 
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Logar</a>
-                </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Sair</a>
-                </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/tasks">Tasks</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="/sair">Sair</a>
+                    </li>
+                {% else %}
+
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    
+                      <li class="nav-item">
+                        <a class="nav-link" href="/sigup">Cadastrar</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="/sigin">Logar</a>
+                      </li>
+                {% endif %}
                 
               </ul>
-              <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+             
             </div>
           </div>
         </div>
