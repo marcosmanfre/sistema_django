@@ -23,5 +23,5 @@ urlpatterns = [
     path('sigup/', views.sigup, name='sigup'),
     path('sigin/', views.sigin, name='sigin'),
     path('sair/', views.sair, name='sair'),
-    path('tasks/', views.tasks, name='tasks'),
+    path('cadastro/', views.cadastro, name='cadastro'),
 ]

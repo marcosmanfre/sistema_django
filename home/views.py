@@ -24,7 +24,7 @@ def sigup(request):
                 user.save()
 
                 login(request, user)
-                return redirect('tasks')
+                return redirect('cadastro')
             except:
 
                 return render(request, 'sigup.html', {
@@ -56,7 +56,7 @@ def sigin(request):
                 })
         else:
             login (request, user)
-            return redirect('tasks')
+            return redirect('cadastro')
         
 @login_required
 def sair(request):
@@ -64,8 +64,8 @@ def sair(request):
     return redirect('home')   
 
 @login_required
-def tasks(request):
-    return render(request, 'tasks.html')    
+def cadastro(request):
+    return render(request, 'cadastro.html')    
 
 
  
