@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from .models import Aluno
+
 
 def home(request):
     return render(request, 'home.html')    
@@ -65,7 +67,7 @@ def sair(request):
 
 @login_required
 def cadastro(request):
-    return render(request, 'cadastro.html')    
+     return render(request, 'cadastro.html', {
+        'alunos': Aluno.objects.all()
+     })    
 
-
- 

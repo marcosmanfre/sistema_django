@@ -2,40 +2,49 @@
 
 {% block content%}
 
-<main class="container mt-5">
-    <div class=row>
-        <div class="col-md-5 offset-md-3">
-            <form method="POST" class="card card-body">
+{% if alunos %}
 
-                {{ error }}
+<h3 class="m-4">Lista de Alunos</h3>
+<div class="row">
+  <div class="col-12">
 
-                {% csrf_token %} 
-                <h1 class="text-center">Cadastrar novo aluno</h1>
-                <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome">
-                </div>
-                <div class="mb-3">
-                    <label for="sobrenome" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenome" name="sobrenome">
-                </div>
-                <div class="mb-3">
-                    <label for="registro" class="form-label">Número do registro</label>
-                    <input type="text" class="form-control" id="registro" name="registro">
-                </div>
-                <div class="mb-3">
-                    <label for="secao" class="form-label">Seção</label>
-                    <input type="text" class="form-control" id="secao" name="secao">
-                </div>
-                
-    
-
-              
-
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>
-        </div>
+<div class="card bg-light ms-4 me-4 mb-4">
+    <div class="card-header">
+      <i class="fa-solid fa-list fa-lg"></i> Alunos cadastrados
     </div>
-</main>
+    <div class="card-body">
+      <p class="card-text">
+     
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Número do Registro</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Seção</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for aluno in alunos %}
+            <tr>
+                <td>{{ aluno.registro_aluno }}</td>
+                <td>{{ aluno.nome }}</td>
+                <td>{{ aluno.sobrenome }}</td>
+                <td>{{ aluno.secao }}</td>
+                <td></td>
+            </tr>      
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% else %}
+<h5 class="alert alert-primary ms-4 me-4">Não contém aluno cadastrado </h5>
+{% endif %}
+
 
 {% endblock %}
+

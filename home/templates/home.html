@@ -2,7 +2,7 @@
 
 {% block content%}
 
-  <!-- Header-->
+
   <header class="bg-dark py-5">
     <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center">
@@ -12,7 +12,7 @@
                     <p class="lead fw-normal text-white-50 mb-4">O nosso sistema gerenciador de alunos oferece uma plataforma fácil de usar para manter informações de estudantes atualizadas e acessíveis de qualquer lugar.</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                         {% if user.is_authenticated %}
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/">Bem vindo </a>
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/">Bem vindo</a>
                         {% else %}
                         <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/sigin">Logar</a>
                         <a class="btn btn-outline-light btn-lg px-4" href="/sigup">Cadastrar novo usuário</a>
@@ -56,14 +56,16 @@
     </div>
 </section>
 
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Marcos Manfre 2023</div></div>
-                    <div class="col-auto">
-                    </div>
-                </div>
+  
+<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Marcos Manfre 2023</div></div>
+            <div class="col-auto">
             </div>
-        </footer>
+        </div>
+    </div>
+</footer>
+
 
 {% endblock %}
